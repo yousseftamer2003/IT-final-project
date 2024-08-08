@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacker_rank_final/it_module/controller/provider.dart';
-import 'package:hacker_rank_final/it_module/screens/home_screen.dart';
+import 'package:hacker_rank_final/screens/guest_tabs_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class HackerRankApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        home: GuestTabsScreen(),
       )
       );
   }
