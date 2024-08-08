@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacker_rank_final/it_module/controller/provider.dart';
-import 'package:hacker_rank_final/it_module/data/taskdata.dart';
+import 'package:hacker_rank_final/it_module/models/taskmodel/taskdata.dart';
 import 'package:hacker_rank_final/it_module/widgets/Taskwidgets/submission.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';

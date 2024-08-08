@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacker_rank_final/it_module/controller/provider.dart';
-import 'package:hacker_rank_final/it_module/data/taskdata.dart';
-
+import 'package:hacker_rank_final/it_module/models/taskmodel/taskdata.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
