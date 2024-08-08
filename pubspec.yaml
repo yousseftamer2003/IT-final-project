@@ -44,6 +44,8 @@ dependencies:
   path_provider: ^2.1.4
   image_picker: ^1.1.2
   motion_tab_bar: ^2.0.4
+  auto_size_text: ^3.0.0
+  flutter_polls: ^0.1.6
 
 dev_dependencies:
   flutter_test:
