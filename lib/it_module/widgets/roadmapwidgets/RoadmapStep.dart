@@ -9,7 +9,7 @@ import 'package:hacker_rank_final/it_module/widgets/roadmapwidgets/RoadmapItemWi
 class RoadmapStepWidget extends StatelessWidget {
   final RoadmapStepData step;
 
-  RoadmapStepWidget({required this.step});
+  const RoadmapStepWidget({super.key, required this.step});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class RoadmapStepWidget extends StatelessWidget {
         children: [
           Column(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 8,
                 backgroundColor: Color.fromARGB(255, 38, 78, 42),
               ),
@@ -31,14 +31,14 @@ class RoadmapStepWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   step.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
