@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -46,6 +47,9 @@ dependencies:
   motion_tab_bar: ^2.0.4
   auto_size_text: ^3.0.0
   flutter_polls: ^0.1.6
+
+  # Yahya and Abdallah unique packages
+  table_calendar: ^3.1.2
 
 dev_dependencies:
   flutter_test:
