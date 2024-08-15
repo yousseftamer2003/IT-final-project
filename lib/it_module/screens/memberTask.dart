@@ -5,40 +5,42 @@ import 'package:hacker_rank_final/it_module/widgets/Taskwidgets/Assignment_card.
 //; To get the correct file path
 
 class MemberTaskScreen extends StatefulWidget {
+  const MemberTaskScreen({super.key});
+
   @override
-  _MemberTaskScreenState createState() => _MemberTaskScreenState();
+  MemberTaskScreenState createState() => MemberTaskScreenState();
 }
 
-class _MemberTaskScreenState extends State<MemberTaskScreen> {
-  TextEditingController _searchController = TextEditingController();
+class MemberTaskScreenState extends State<MemberTaskScreen> {
+  TextEditingController searchController = TextEditingController();
   bool showSubmittedOnly = false;
   List<AssignmentCard> assignments = [
-    AssignmentCard(
+    const AssignmentCard(
       title: 'Assignment 1',
       subject: 'Maths',
       description: 'Rational Numbers assignment, Very important for your next exam',
       dueDate: '18 Sep',
       initialDaysLeft: '',
       initiallySubmitted: true,
-      initialFiles: const ['file1.jpg'],
+      initialFiles: ['file1.jpg'],
     ),
-    AssignmentCard(
+    const AssignmentCard(
       title: 'Assignment 2',
       subject: 'Maths',
       description: 'Whole Numbers, Fraction, Decimals, Percentage, Ratio, Time, Measurement, Geometry, Data Analysis, Algebra, Speed',
       dueDate: '18 Sep',
       initialDaysLeft: '1 Day Left',
       initiallySubmitted: false,
-      initialFiles:const  [],
+      initialFiles:[],
     ),
-    AssignmentCard(
+    const AssignmentCard(
       title: 'Assignment 3',
       subject: 'Science',
       description: 'Crop Production & Mgt. Very important for your next exam',
       dueDate: '20 Sep',
       initialDaysLeft: '4 Days Left',
       initiallySubmitted: false,
-      initialFiles: const [],
+      initialFiles: [],
     ),
   ];
 
@@ -48,33 +50,33 @@ class _MemberTaskScreenState extends State<MemberTaskScreen> {
   void initState() {
     super.initState();
     filteredAssignments = assignments;
-    _searchController.addListener(() {
+    searchController.addListener(() {
       filterAssignments();
     });
   }
   
 
   void filterAssignments() {
-    List<AssignmentCard> _assignments = [];
-    _assignments.addAll(assignments);
-    if (_searchController.text.isNotEmpty) {
-      _assignments.retainWhere((assignment) {
-        String searchTerm = _searchController.text.toLowerCase();
+    List<AssignmentCard> assignments = [];
+    assignments.addAll(assignments);
+    if (searchController.text.isNotEmpty) {
+      assignments.retainWhere((assignment) {
+        String searchTerm = searchController.text.toLowerCase();
         String assignmentTitle = assignment.title.toLowerCase();
         return assignmentTitle.contains(searchTerm);
       });
     }
     if (showSubmittedOnly) {
-      _assignments.retainWhere((assignment) => assignment.initiallySubmitted);
+      assignments.retainWhere((assignment) => assignment.initiallySubmitted);
     }
     setState(() {
-      filteredAssignments = _assignments;
+      filteredAssignments = assignments;
     });
   }
 
   @override
   void dispose() {
-    _searchController.dispose();
+    searchController.dispose();
     super.dispose();
   }
 
@@ -86,7 +88,7 @@ class _MemberTaskScreenState extends State<MemberTaskScreen> {
         child: Column(
           children: [
             SearchBar(
-              controller: _searchController,
+              controller: searchController,
               showSubmittedOnly: showSubmittedOnly,
               onToggleSubmitted: (value) {
                 setState(() {

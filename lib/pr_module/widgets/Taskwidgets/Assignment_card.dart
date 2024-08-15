@@ -15,7 +15,7 @@ class AssignmentCard extends StatefulWidget {
   final bool initiallySubmitted;
   final List<String> initialFiles;
 
-  AssignmentCard({
+  const AssignmentCard({super.key, 
     required this.title,
     required this.subject,
     required this.description,
@@ -26,10 +26,10 @@ class AssignmentCard extends StatefulWidget {
   });
 
   @override
-  _AssignmentCardState createState() => _AssignmentCardState();
+  AssignmentCardState createState() => AssignmentCardState();
 }
 
-class _AssignmentCardState extends State<AssignmentCard> {
+class AssignmentCardState extends State<AssignmentCard> {
   bool isSubmitted = false;
   late String daysLeft;
   late List<String> submittedFiles;
@@ -85,6 +85,7 @@ class _AssignmentCardState extends State<AssignmentCard> {
     if (await file.exists()) {
       OpenFile.open(file.path);
     } else {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('File not found')),
       );
